@@ -1,2 +1,2 @@
- var msg = 'Hello World!'; 
- console.log('>>>>>>>>> First: ' + msg);
+const msg = 'Hello World!';
+console.log(`>>>>>>>>> First: ${msg}`);
