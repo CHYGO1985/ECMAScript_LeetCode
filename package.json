@@ -1,0 +1,26 @@
+{
+  "name": "ECMAScript_LeetCode",
+  "version": "1.0.0",
+  "description": "For learning NodeJS.",
+  "main": "JewelsAndStones.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CHYGO1985/ECMAScript_LeetCode.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CHYGO1985/ECMAScript_LeetCode/issues"
+  },
+  "homepage": "https://github.com/CHYGO1985/ECMAScript_LeetCode#readme",
+  "devDependencies": {
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0"
+  }
+}
