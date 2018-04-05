@@ -23,3 +23,12 @@ const anagramMappings = function (A, B) {
 };
 
 console.log(anagramMappings(arrA, arrB));
+
+
+// method 2:
+// ref: https://leetcode.com/problems/find-anagram-mappings/discuss/113174/JavaScript-one-line-solution-using-map
+// use map method + construct Map obj from an array
+// var anagramMappings = function(A, B) {
+//     var map = new Map(B.map((num, ind) => [num, ind]));
+//     return A.map((num) => map.get(num));
+// };
