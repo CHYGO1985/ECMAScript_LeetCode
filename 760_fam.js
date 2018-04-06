@@ -1,25 +1,24 @@
 /**
  *
- * @author jingjie jiang Apr 5, 2017
+ * 1 error: did not consider repeat test case.
+ * @author jingjie jiang Apr 7, 2017
  */
-// const arrA = [12, 28, 46, 32, 50];
-// const arrB = [50, 12, 32, 46, 28];
+const arrA = [12, 28, 46, 32, 50];
+const arrB = [50, 12, 32, 46, 28];
 
-const arrA = [40, 40];
-const arrB = [40, 40];
+// const arrA = [40, 40];
+// const arrB = [40, 40];
 
 const anagramMappings = function (A, B) {
   const map = new Map();
   const res = {};
-  A.forEach((element, index) => {
+  B.forEach((element, index) => {
     map.set(element, index);
   });
 
-  console.log(map);
-
-  B.forEach((element, index) => {
+  A.forEach((element, index) => {
     if (map.get(element) >= 0) {
-      res[map.get(element)] = index;
+      res[index] = map.get(element);
     }
   });
   res.length = A.length;
