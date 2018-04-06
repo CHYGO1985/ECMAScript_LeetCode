@@ -2,8 +2,11 @@
  *
  * @author jingjie jiang Apr 5, 2017
  */
-const arrA = [12, 28, 46, 32, 50];
-const arrB = [50, 12, 32, 46, 28];
+// const arrA = [12, 28, 46, 32, 50];
+// const arrB = [50, 12, 32, 46, 28];
+
+const arrA = [40, 40];
+const arrB = [40, 40];
 
 const anagramMappings = function (A, B) {
   const map = new Map();
@@ -12,8 +15,10 @@ const anagramMappings = function (A, B) {
     map.set(element, index);
   });
 
+  console.log(map);
+
   B.forEach((element, index) => {
-    if (map.has(element) >= 0) {
+    if (map.get(element) >= 0) {
       res[map.get(element)] = index;
     }
   });
