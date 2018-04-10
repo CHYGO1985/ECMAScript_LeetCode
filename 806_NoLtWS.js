@@ -1,10 +1,10 @@
-// const w = [4, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
-//   10, 10, 10, 10, 10, 10];
-// const s = 'bbbcccdddaaa';
-
-const w = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
+const w = [4, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
   10, 10, 10, 10, 10, 10];
-const s = 'abcdefghijklmnopqrstuvwxyz';
+const s = 'bbbcccdddaaa';
+
+// const w = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
+//   10, 10, 10, 10, 10, 10];
+// const s = 'abcdefghijklmnopqrstuvwxyz';
 
 /**
  * solved.
@@ -21,12 +21,10 @@ const numberOfLines = function (widths, S) {
     .reduce((preVal, curVal) => {
       if (curVal + preVal > 100) {
         count += 1;
-        preVal = curVal;
-      } else {
-        curVal += preVal;
+        return curVal;
       }
 
-      return curVal;
+      return curVal + preVal;
     });
 
   return [count, lastWidth];
