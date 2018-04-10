@@ -8,7 +8,7 @@ const s = 'abcdefghijklmnopqrstuvwxyz';
 
 /**
  * solved.
- * @author jingjiejiang Apr 10, 2018 
+ * @author jingjiejiang Apr 10, 2018
  */
 const getWidthVal = function (ele) {
   const base = 'a'.charCodeAt(0);
