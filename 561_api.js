@@ -1,6 +1,6 @@
 /**
  * sovled
- * @author jingjie jiang Apr 11, 2018 
+ * @author jingjie jiang Apr 11, 2018
  */
 const arr = [1, 4, 2, 3, 5, 6];
 
