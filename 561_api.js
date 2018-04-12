@@ -2,10 +2,13 @@
  * sovled
  * @author jingjie jiang Apr 11, 2018
  */
-const arr = [1, 4, 2, 3, 5, 6];
+// const arr = [1, 4, 2, 3, 5, 6];
+const arr = [-470, 66, -4835, -5623];
 
 const arrayPairSum = function (nums) {
-  nums.sort();
+  nums.sort((a, b) => {
+    return a - b;
+  });
   const res = nums.reduce((acc, cur, index) => {
     if (index > 0 && index % 2 !== 0) {
       return acc + Math.min(cur, nums[index - 1]);
