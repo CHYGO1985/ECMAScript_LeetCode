@@ -3,7 +3,7 @@
  * @author jingjie jiang Apr 11, 2018
  */
 // const arr = [1, 4, 2, 3, 5, 6];
-const arr = [-470, 66, -4835, -5623，-1];
+const arr = [-470, 66, -4835, -5623, -1, 5];
 
 const arrayPairSum = function (nums) {
   nums.sort((a, b) => a - b);
