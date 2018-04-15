@@ -1,30 +1,21 @@
-
-let depthSum = function (nestedList) {
-  return nestedList.map(ele => helper(ele, 1)).reduce((acc, cur) => acc + cur);
-  // return nestedList.getList;
-
-  // isInteger
-  // getInteger
-  // setInteger
-  // add
-  // getList
-};
-
+/**
+ * solved used 4 hours
+ * @author jingjie jiang Apr 16, 2018
+ */
 const helper = function (ele, depth) {
   let res = 0;
-  console.log('>>> %d depth, %j', depth, ele.getList());
-  // console.log('%j', ele.getInteger());
 
-  if (ele.getInteger()) {
+  if (ele.getInteger() !== null) {
     res += ele.getInteger() * depth;
   } else {
-    res += helper(ele[0].getList(), depth + 1);
+    res += ele.getList().map(val => helper(val, depth + 1)).reduce(((acc, cur) => acc + cur), 0);
   }
-  /*
-    else {
-      res += helper(ele.getList, depth + 1);
-    }
-    return res;
-    */
+
   return res;
 };
+
+const depthSum = function (nestedList) {
+  return nestedList.map(ele => helper(ele, 1)).reduce(((acc, cur) => acc + cur), 0);
+};
+
+console.log(depthSum(1));
