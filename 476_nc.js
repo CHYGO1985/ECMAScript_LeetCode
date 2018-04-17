@@ -6,6 +6,7 @@
  */
 const param = 13; // params: 5, 1, 13
 
+/*eslint-disable*/
 const findComplement = function (num) {
   let tmp = num;
   let pos = 0;
