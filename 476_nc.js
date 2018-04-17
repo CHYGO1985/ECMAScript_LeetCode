@@ -1,6 +1,9 @@
-// check the last avail bit, remember the pos
-// reverse the num to num1
-// use num1 & (a number that has pos num of 1 bits)
+/**
+ *
+ * 476. Number Complement: solved.
+ *
+ * @author jingjie jiang Apr 17, 2018
+ */
 const param = 13; // params: 5, 1, 13
 
 const findComplement = function (num) {
