@@ -6,6 +6,7 @@
 /**
  * Initialize your data structure here.
  */
+/*eslint-disable*/
 let Logger = function () {
   this.map = new Map();
 };
