@@ -6,8 +6,7 @@
 /**
  * Initialize your data structure here.
  */
-/*eslint-disable*/
-let Logger = function () {
+const Logger = function () {
   this.map = new Map();
 };
 
@@ -27,8 +26,8 @@ Logger.prototype.shouldPrintMessage = function (timestamp, message) {
   return true;
 };
 
-/**
-   * Your Logger object will be instantiated and called as such:
-   * var obj = Object.create(Logger).createNew()
-   * var param_1 = obj.shouldPrintMessage(timestamp,message)
-   */
+const obj = new Logger();
+console.log(obj.shouldPrintMessage(1, 'foo'));
+console.log(obj.shouldPrintMessage(3, 'foo'));
+console.log(obj.shouldPrintMessage(10, 'foo'));
+console.log(obj.shouldPrintMessage(11, 'foo'));
