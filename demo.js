@@ -1,3 +1,4 @@
+/*eslint-disable*/
 const XLSX = require('xlsx');
 
 var workbook = XLSX.readFile('Test.xlsx');
