@@ -4,7 +4,8 @@
   "description": "For learning NodeJS.",
   "main": "JewelsAndStones.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel $src -d lib"
   },
   "repository": {
     "type": "git",
@@ -18,12 +19,28 @@
   },
   "homepage": "https://github.com/CHYGO1985/ECMAScript_LeetCode#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.10.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0"
   },
   "dependencies": {
-    "eslint": "^4.19.1"
+    "babel-polyfill": "^6.26.0",
+    "eslint": "^4.19.1",
+    "xlsx": "^0.12.10"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "sourceMaps": true,
+    "retainLines": true
+  },
+  "compilerOptions": {
+    "target": "ES6"
   }
 }

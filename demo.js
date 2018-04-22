@@ -1,12 +1,12 @@
-/* eslint-disbale */
-// const XLSX = require('xlsx');
+import XLSX from 'xlsx';
 
 const workbook = XLSX.readFile('Test.xlsx');
 const sheetIds = workbook.SheetNames;
 
 // Method 1: use sheet_to_json
 // sheetIds.forEach((ele, index) => {
-// console.log(JSON.stringify(XLSX.utils.sheet_to_json(workbook.Sheets[sheetIds[index]], {header: 1})));
+// console.log(JSON.stringify(XLSX.utils.sheet_to_json(workbook.Sheets[sheetIds[index]],
+// {header: 1})));
 // });
 // use header: 1
 // [["test","testb1"],["test","testb12"],["test11","testb13"]]
