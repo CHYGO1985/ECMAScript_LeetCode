@@ -1,21 +1,21 @@
 import XLSX from 'xlsx';
+import _ from 'lodash';
 
-const workbook = XLSX.readFile('Test.xlsx');
-const sheetIds = workbook.SheetNames;
+const workBook = XLSX.readFile('Test.xlsx');
+const sheetIds = workBook.SheetNames;
 
 // Method 1: use sheet_to_json
 // sheetIds.forEach((ele, index) => {
-// console.log(JSON.stringify(XLSX.utils.sheet_to_json(workbook.Sheets[sheetIds[index]],
-// {header: 1})));
+//   console.log(JSON.stringify(XLSX.utils.sheet_to_json(workBook.Sheets[sheetIds[index]], { header: 1 })));
 // });
 // use header: 1
-// [["test","testb1"],["test","testb12"],["test11","testb13"]]
-// [["test2","testb2"],["test2","1"],["test21","1"]]
+// [["testa1","testb1"],["test12","testb21"],["test13","testb23"]]
+// [["test2a","test2b"],["test2a2","test2b2"],["test2a3","test2b3"]]
 
 // Method 2: own version
 const jsonRes = {};
 sheetIds.forEach((ele) => {
-  const worksheet = workbook.Sheets[ele];
+  const worksheet = workBook.Sheets[ele];
   const headers = {};
   const data = {};
   // iterate all the keys in worksheet : "!ref"， “A1”，"B1", “A2”, "B2"。。。
@@ -31,7 +31,7 @@ sheetIds.forEach((ele) => {
     const value = worksheet[key].v;
 
     // store header names
-    if (row === 1 && value) {
+    if (row === 1 && !_.isEmpty(value)) {
       headers[col] = value;
       return;
     }
