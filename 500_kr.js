@@ -1,3 +1,8 @@
+/**
+ *
+ * solved
+ * @author jingjie jiang Apr 26, 2018
+ */
 const params = ['Hello', 'Alaska', 'Dad', 'Peace'];
 
 const keyMap = {
@@ -6,19 +11,19 @@ const keyMap = {
   2: 'zxcvbnm',
 };
 
-let findWords = function (words) {
+const findWords = function (words) {
   // init a key board map
   // iterate through words, check the char in each word whether they have the same value
   // convert to lowercase
   // if it is return, else skip
-  words.filter((word) => {
+  const res = words.filter((word) => {
     word = word.toLowerCase();
-    const key = Object.keys(keyMap).filter(ele => keyMap[ele].indexOf(word.charAt(0)) > 0);
-    console.log('key:' + key);
+    const key = Object.keys(keyMap).filter(ele => keyMap[ele].indexOf(word.charAt(0)) >= 0);
     let isSame = true;
     [...word].forEach((ele) => { if (keyMap[key].indexOf(ele) < 0) isSame = false; });
-    if (isSame) return word;
+    return isSame;
   });
+  return res;
 };
 
 console.log(findWords(params));
