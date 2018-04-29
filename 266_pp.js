@@ -15,7 +15,7 @@ const canPermutePalindrome = function (s) {
     if (!res[ele]) res[ele] = 0;
     res[ele] += 1;
   });
-  const count = Object.values(res).reduce(((acc, cur) => acc += (cur % 2)), 0);
+  const count = Object.values(res).reduce(((acc, cur) => acc + (cur % 2)), 0);
   return count <= 1;
 };
 
