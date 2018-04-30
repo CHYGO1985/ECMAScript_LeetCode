@@ -1,5 +1,5 @@
 /**
- * 
+ *
  * @author jingjie jiang Apr 30, 2018
  */
 // const metrics = [[1, 2], [3, 4]];
@@ -46,17 +46,12 @@ console.log(matrixReshape(metrics, row, col));
 //     const numsRow = nums.length;
 //     const numsCol = nums[0].length;
 //     const output = [];
-    
 //     let flatNums = null;
-    
-//     // return original if new dimension doesn't match 
+//     // return original if new dimension doesn't match
 //     if (r * c !== numsRow * numsCol) return nums;
-    
 //     // deconstruct the original array and reconstruct new array
 //     flatNums = nums.reduce((acc, curr) => acc.concat(curr), []);
-    
-//     for (let i = 0; i < r; i++) 
+//     for (let i = 0; i < r; i++)
 //         output.push(flatNums.splice(0, c));
-    
 //     return output;
 // };
