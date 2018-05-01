@@ -1,5 +1,5 @@
 /**
- * 
+ *
  * @author jingjie jiang May 1, 2018
  */
 const params = [[1, 2, 3, 4], [5, 1, 2, 3], [9, 5, 1, 2]];
