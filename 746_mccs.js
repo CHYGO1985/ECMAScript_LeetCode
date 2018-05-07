@@ -1,4 +1,8 @@
+/**
+ * @author jingjie jiang May 7, 2018
+ */
 const params = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1];
+
 /**
  * @param {number[]} cost
  * @return {number}
