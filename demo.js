@@ -6,7 +6,7 @@ const sheetIds = workBook.SheetNames;
 
 // Method 1: use sheet_to_json
 // sheetIds.forEach((ele, index) => {
-//   console.log(JSON.stringify(XLSX.utils.sheet_to_json(workBook.Sheets[sheetIds[index]], { header: 1 })));
+// console.log(JSON.stringify(XLSX.utils.sheet_to_json(workBook.Sheets[sheetIds[index]], { header: 1 })));
 // });
 // use header: 1
 // [["testa1","testb1"],["test12","testb21"],["test13","testb23"]]
@@ -14,6 +14,7 @@ const sheetIds = workBook.SheetNames;
 
 // Method 2: own version
 const jsonRes = {};
+/*
 sheetIds.forEach((ele) => {
   const worksheet = workBook.Sheets[ele];
   const headers = {};
@@ -43,6 +44,8 @@ sheetIds.forEach((ele) => {
 });
 
 console.log(JSON.stringify(jsonRes, null, 2));
+*/
+
 // output:
 // {
 //     "Sheet1": {
@@ -66,3 +69,34 @@ console.log(JSON.stringify(jsonRes, null, 2));
 //       ]
 //     }
 //   }
+
+// output as title : value ...
+sheetIds.forEach((ele) => {
+  const worksheet = workBook.Sheets[ele];
+  const headers = {};
+  const data = {};
+  // iterate all the keys in worksheet : "!ref"， “A1”，"B1", “A2”, "B2"。。。
+  Object.keys(worksheet).forEach((key) => {
+    // get only valid columns start with Capital Letters
+    if (key[0] === '!') return;
+    // get pos of fst number in key
+    const r = new RegExp('\\d');
+    const colIndex = key.search(r);
+    // parse out the column, row, and value
+    const col = key.substring(0, colIndex); // get column ID A...
+    const row = parseInt(key.substring(colIndex), 10); // get row num 1, 2...
+    const value = worksheet[key].v;
+
+    // store header names
+    if (row === 1 && !_.isEmpty(value)) {
+      headers[col] = value;
+      return;
+    }
+
+    if (!data[headers[col]]) data[headers[col]] = [];
+    data[headers[col]].push(value);
+  });
+  jsonRes[ele] = data;
+});
+
+console.log(JSON.stringify(jsonRes, null, 2));
