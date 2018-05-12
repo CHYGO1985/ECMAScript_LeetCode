@@ -1,6 +1,6 @@
 /**
- * async/await : await will wait for promise to execute
- * @author jingjiejiang 
+ * async/await : await will wait for promise to be resolved
+ * @author jingjiejiang
  */
 
 async function getSum(up) {
