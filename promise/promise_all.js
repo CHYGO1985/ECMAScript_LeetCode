@@ -1,5 +1,5 @@
 /**
- * promise.all() example
+ * promise.all example
  * @author jingjiejiang May 13, 2018
  */
 const nums = [1, 2, 3, 4, 5];
@@ -13,12 +13,20 @@ const getPromises = function (params) {
 };
 
 async function runner() {
-  const result = await Promise.all(getPromises(nums)).then(fulfilled => fulfilled);
-  // console.log(result);
+  const result = await Promise.all(getPromises(nums)).then(fulfilled => {
+    return fulfilled;
+  });
+  console.log(`result---- ${result}`);
+  console.log(`result++++ ${result}`);
   return result;
 }
 
-console.log(`result ${runner()}`);
+async function getRes() {
+  console.log(`result^^^^ ${await runner()}`);
+}
+
+getRes();
+// console.log(`result ${runner());
 
 // const a1 = Promise.resolve(1);
 // console.log(a1);
