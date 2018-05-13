@@ -7,11 +7,9 @@ const nums = [1, 2, 3, 4, 5];
 
 /* test with async and await */
 const getPromises = function (params) {
-  const promises = params.map((cur, index) => {
-    return new Promise((resolve) => {
-      resolve(10 * index);
-    });
-  });
+  const promises = params.map((cur, index) => new Promise((resolve) => {
+    resolve(10 * index);
+  }));
   console.log(promises);
   return promises;
 };
