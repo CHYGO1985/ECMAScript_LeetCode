@@ -1,3 +1,9 @@
+/**
+ * This is to check the dif between proimse that has reject or not.
+ *
+ * @author jingjiejiang May 15, 2018
+ */
+/*eslint-disable*/
 const aGoodPromise = () => new Promise((resolve) => {
   console.log('good good');
   resolve('good good');
